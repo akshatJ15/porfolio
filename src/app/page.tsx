@@ -23,7 +23,7 @@ export default function Home() {
         <AboutSection />
       </section>
       <section id="contact">
-        <ContactSection id="contact" />
+        <ContactSection/>
       </section>
       <Footer />
     </div>
