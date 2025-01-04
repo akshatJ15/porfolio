@@ -18,6 +18,7 @@ import CardHeader from "@/components/CardHeader/CardHeader";
 import ToolBoxItems from "@/components/ToolBoxItems/ToolBoxItems";
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import mapImage from "../assets/images/map.png";
 
 const toolBoxItems = [
   {
@@ -196,8 +197,8 @@ export const AboutSection = () => {
             </Card>
 
             <Card className="h-[320px] p-0 md:col-span-2 lg:col-span-1">
-              <img
-                src="https://boundlessmaps.com/wp-content/uploads/maps/sdb/bur_dubai-20000-sdb-4cde0b-preview-500x500.png"
+              <Image
+                src={mapImage}
                 alt="map"
                 className="object-cover w-full h-full object-left-top"
               />
