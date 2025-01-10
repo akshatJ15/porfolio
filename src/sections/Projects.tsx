@@ -1,6 +1,4 @@
 "use client";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import Image from "next/image";
 import CheckIcon from "../assets/icons/check-circle.svg";
 import ArrowUpRight from "../assets/icons/arrow-up-right.svg";
@@ -9,6 +7,7 @@ import chatty from "../assets/project-images/chatty.png";
 import codecraft from "../assets/project-images/codecraft.png";
 import weather from "../assets/project-images/weather.png";
 import dashboard from "../assets/project-images/dashboard.png";
+import bolt from "../assets/project-images/bolt.png";
 import { motion } from "framer-motion";
 
 const portfolioProjects = [
@@ -49,16 +48,16 @@ const portfolioProjects = [
     image: dashboard,
   },
   {
-    company: "HTML, CSS, JavaScript",
-    title: "Weather App",
+    company: "React-js, Express-js, MongoDB",
+    title: "Bolt",
     results: [
-      { title: "Uses open-weather api" },
-      { title: "Responsive" },
-      { title: "Deployed on GitHub" },
+      { title: "Uses Socket-io" },
+      { title: "Real-time connection feature" },
+      { title: "Deployed on Render" },
     ],
-    link: "https://akshatj15.github.io/Weather-App/",
-    git: "https://github.com/akshatJ15/Weather-App",
-    image: weather,
+    link: "https://bolt-frontend.onrender.com/",
+    git: "https://github.com/akshatJ15/Bolt/",
+    image: bolt,
   },
 ];
 
@@ -94,7 +93,12 @@ export const ProjectsSection = () => {
                     backgroundImage: `url(${grainImage.src})`,
                   }}
                 ></div>
-                <div className="lg:grid lg:grid-cols-2 gap-16">
+                <motion.div
+                  className="lg:grid lg:grid-cols-2 gap-16"
+                  whileHover={{
+                    scale: 1.05,
+                  }}
+                >
                   <div className="lg:pb-16">
                     <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
                       <span>{project.company}</span>
@@ -141,14 +145,14 @@ export const ProjectsSection = () => {
                       </a>
                     </div>
                   </div>
-                  <div className="relative">
+                  <div className="relative ">
                     <Image
                       src={project.image}
                       alt={project.title}
-                      className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
+                      className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none "
                     />
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
             );
           })}
