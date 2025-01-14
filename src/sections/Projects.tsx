@@ -8,6 +8,7 @@ import codecraft from "../assets/project-images/codecraft.png";
 import weather from "../assets/project-images/weather.png";
 import dashboard from "../assets/project-images/dashboard.png";
 import bolt from "../assets/project-images/bolt.png";
+import zephyr from "../assets/project-images/zephyr.png";
 import { motion } from "framer-motion";
 
 const portfolioProjects = [
@@ -36,16 +37,16 @@ const portfolioProjects = [
     image: codecraft,
   },
   {
-    company: "React-js , Tailwind-css , Framer-motion",
-    title: "React Dashboard",
+    company: "Next-js , Tailwind-css , Convex",
+    title: "Zephyr",
     results: [
-      { title: "Deployed on Vercel" },
-      { title: "Responsive" },
-      { title: "Uses Charty and framer motion" },
+      { title: "Deployed on Netlify" },
+      { title: "Enter a prompt and get a response" },
+      { title: "Deploy and export the projects" },
     ],
-    link: "https://react-admin-dashboard-theta-ten.vercel.app/",
-    git: "https://github.com/akshatJ15/React-Admin-Dashboard",
-    image: dashboard,
+    link: "https://zephyr-new.netlify.app/",
+    git: "https://github.com/akshatJ15/Zephyr",
+    image: zephyr,
   },
   {
     company: "React-js, Express-js, MongoDB",
