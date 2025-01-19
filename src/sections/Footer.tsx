@@ -1,3 +1,4 @@
+"use client";
 import ArrowUpRightIcon from "../assets/icons/arrow-up-right.svg";
 
 export const Footer = () => {
@@ -11,8 +12,8 @@ export const Footer = () => {
         <div className="border-t border-white/15 py-6 text-sm flex flex-col items-center gap-8 md:flex-row md:justify-between">
           <div className="text-white/40">Aakshat Jindal</div>
 
-          <nav className="flex flex-col md:flex-row items-center gap-8">
-            <a href="https://github.com/akshatJ15" className="inline-flex items-center gap-1.5 cursor">
+          <nav className="flex flex-col md:flex-row items-center gap-8 z-10">
+            <a href="https://github.com/akshatJ15" className="inline-flex items-center gap-1.5 cursor-pointer" target="_blank">
               <span className="font-semibold">Github</span>
               <ArrowUpRightIcon className="size-4 " />
             </a>

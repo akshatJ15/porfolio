@@ -128,13 +128,6 @@ export const AboutSection = () => {
           title="A Glimpse Into My World"
           description="Learn More About Who I am, What Inspires Me and What I Do"
         />
-        <div className="mt-16 md:mt-14 lg:mt-13">
-          <SectionHeader
-            eyebrow="Hi! I am Aakshat Jindal"
-            title=""
-            description=""
-          />
-        </div>
         <div className="mt-20 flex flex-col gap-8">
           <div className="grid gap-8 grid-cols-1 md:grid-cols-5 lg:grid-cols-3">
             <Card className="h-[320px] md:col-span-2 lg:col-span-1">

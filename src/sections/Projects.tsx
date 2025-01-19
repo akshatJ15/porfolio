@@ -9,7 +9,7 @@ import weather from "../assets/project-images/weather.png";
 import dashboard from "../assets/project-images/dashboard.png";
 import bolt from "../assets/project-images/bolt.png";
 import zephyr from "../assets/project-images/zephyr.png";
-import { motion } from "framer-motion";
+import { motion, MotionConfig } from "framer-motion";
 
 const portfolioProjects = [
   {
@@ -64,19 +64,38 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 lg:py-24">
+    <motion.section className="pb-16">
       <div className="container">
-        <div className="flex justify-center">
+        <motion.div
+          className="flex justify-center"
+          initial={{ y: -30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.3, ease: "easeIn", delay: 0.1 }}
+        >
           <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent">
             Real-World Results
           </p>
-        </div>
-        <h2 className="font-serif text-3xl text-center mt-6 md:text-5xl">
+        </motion.div>
+        <motion.h2
+          className="font-serif text-3xl text-center mt-6 md:text-5xl"
+          initial={{ y: -30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.3, ease: "easeIn", delay: 0.1 }}
+        >
           Featured Projects
-        </h2>
-        <p className="text-center text-white/60 mt-4 md:text-lg mx-w-md mx-auto lg:text-xl">
+        </motion.h2>
+        <motion.p
+          className="text-center text-white/60 mt-4 md:text-lg mx-w-md mx-auto lg:text-xl"
+          initial={{ y: -30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.3, ease: "easeIn", delay: 0.1 }}
+        >
           See how I transformed concepts into engaging digital experiences.
-        </p>
+        </motion.p>
+
         <div className="md:mt-20 flex flex-col mt-10 gap-20">
           {portfolioProjects.map((project, index) => {
             return (
@@ -94,11 +113,11 @@ export const ProjectsSection = () => {
                     backgroundImage: `url(${grainImage.src})`,
                   }}
                 ></div>
+
                 <motion.div
-                  className="lg:grid lg:grid-cols-2 gap-16"
-                  whileHover={{
-                    scale: 1.05,
-                  }}
+                  className="lg:grid lg:grid-cols-2 gap-16 "
+                  whileHover={{ gap: "100px", paddingTop: "10px" }}
+                  transition={{ duration: 0.3 }}
                 >
                   <div className="lg:pb-16">
                     <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
@@ -108,6 +127,7 @@ export const ProjectsSection = () => {
                       {project.title}
                     </h3>
                     <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
+
                     <ul className="flex flex-col gap-4 mt-4 md:mt-5">
                       {project.results.map((result) => {
                         return (
@@ -121,8 +141,9 @@ export const ProjectsSection = () => {
                         );
                       })}
                     </ul>
+
                     <div className="flex flex-col md:flex-row md:gap-4">
-                      <a href={project.link}>
+                      <a href={project.link} target="_blank">
                         <button
                           className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6 
                         transition ease-in-out delay-150 hover:bg-gray-950 hover:text-white
@@ -133,7 +154,7 @@ export const ProjectsSection = () => {
                           <ArrowUpRight className="size-4" />
                         </button>
                       </a>
-                      <a href={project.git}>
+                      <a href={project.git} target="_blank">
                         <button
                           className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6
                         transition ease-in-out delay-150 hover:bg-gray-950 hover:text-white
@@ -159,6 +180,6 @@ export const ProjectsSection = () => {
           })}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

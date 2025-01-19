@@ -1,14 +1,17 @@
-import memojiImage from "../assets/images/memoji-computer.png";
+"use client";
 import Image from "next/image";
+import memojiImage from "../assets/images/memoji-computer.png";
 import ArrowDown from "../assets/icons/arrow-down.svg";
 import grainImage from "../assets/images/grain.jpg";
 import StarIcon from "../assets/icons/star.svg";
 import HeroOrbit from "@/components/HeroOrbit/HeroOrbit";
 import SparkleIcon from "../assets/icons//sparkle.svg";
+import { motion, MotionConfig } from "framer-motion";
+import SectionHeader from "@/components/SectionHeader/SectionHeader";
 
 export const HeroSection = () => {
   return (
-    <div className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
+    <div className="pt-32 pb-14 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
       <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div
           className="absolute inset-0 -z-30 opacity-5"
@@ -120,7 +123,12 @@ export const HeroSection = () => {
         </HeroOrbit>
       </div>
       <div className="container">
-        <div className="flex flex-col items-center">
+        <motion.div
+          className="flex flex-col items-center"
+          initial={{ transform: "scale(0)" }}
+          animate={{ transform: "scale(1)" }}
+          transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
+        >
           <Image src={memojiImage} className="size-[100px]" alt="Memoji" />
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
             <div className="bg-green-500 size-2.5 rounded-full relative">
@@ -130,17 +138,28 @@ export const HeroSection = () => {
               Available for new projects
             </div>
           </div>
-        </div>
-        <div className="max-w-lg mx-auto">
+        </motion.div>
+        <motion.div
+          className="max-w-lg mx-auto"
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.3, ease: "easeIn" }}
+        >
           <h1 className="font-serif text-3xl text-center mt-8 tracking-wide md:text-5xl">
             Building Execptional User Experience
           </h1>
           <p className="mt-4 text-center text-white/60 md:text-lg">
             I specialize in transforming designs into functional,
-            high-performing web applications. Let&apos;s discuss your next project!
+            high-performing web applications. Let&apos;s discuss your next
+            project!
           </p>
-        </div>
-        <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
+        </motion.div>
+        <motion.div
+          className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4"
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.3, ease: "easeIn" }}
+        >
           <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl ">
             <span className="font-semibold">Explore my work</span>
             <ArrowDown className="size-4" />
@@ -149,7 +168,14 @@ export const HeroSection = () => {
             <span>👋</span>
             <span className="font-semibold">Let&apos;s Connect</span>
           </button>
-        </div>
+        </motion.div>
+      </div>
+      <div className="mt-24">
+        <SectionHeader
+          eyebrow=""
+          title="Hi! I am Aakshat Jindal"
+          description=""
+        />
       </div>
     </div>
   );

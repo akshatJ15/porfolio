@@ -3,10 +3,18 @@ import React from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Card from "@/components/Card/Card";
+import StarIcon from "../../assets/icons/star.svg";
+import chattyIcon from "../../assets/project-icons/chatty-icon.png";
 
 const page = () => {
   return (
-    <main>
+    <main className="relative z-0 overflow-x-clip">
+      <div
+        className="absolute h-[400px] w-[1600px] bottom-0 left-1/2 -translate-x-1/2 bg-emerald-300/30
+      [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10 mt-5"
+      ></div>
+
       <section
         className="flex flex-col items-center justify-center mx-11 my-10 md:my-28"
         id="home"
@@ -25,10 +33,12 @@ const page = () => {
             initial={{ transform: "scale(0)" }}
             animate={{ transform: "scale(1)" }}
             transition={{ duration: 1, ease: "backInOut", delay: 0.3 }}
-          ></motion.div>
+          >
+            <StarIcon className="size-28 text-emerald-300" />
+          </motion.div>
         </div>
         <motion.p
-          className="text-base md:text-xl text-primary-green max-w-[700px] text-center mt-8 tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent"
+          className="mt-4 text-center font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent"
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.3, ease: "easeIn", delay: 0.2 }}
@@ -48,105 +58,97 @@ const page = () => {
           columnsCountBreakPoints={{ 700: 1, 800: 2, 1100: 3 }}
         >
           <Masonry gutter="1.75rem" sequential>
-            <a
-              href="https://chat-it-temp.vercel.app/"
-              target="_blank"
-              className="projectcard bg-[#ffffff60] flex-1 rounded-3xl py-2 px-8 flex items-center justify-center min-h-[9.5rem] "
-            >
-              <div className="flex justify-between items-center">
-                <div className="h-full flex flex-col flex-1 justify-center py-3 md:pr-2 md:py-0">
-                  <h4 className="font-bold text-[19px] md:text-xl text-primary-green mb-2">
-                    Chatty
+            {/* CHATTY */}
+
+            <Card className="border-2 border-blue-500">
+              <a
+                href="https://chatty-7foh.onrender.com/"
+                target="_blank"
+                className="projectcard  flex-1 rounded-3xl py-2 px-8 flex items-center justify-center min-h-[9.5rem] "
+              >
+                <div className="flex justify-between items-center">
+                  <div className="h-full flex flex-col flex-1 justify-center py-3 md:pr-2 md:py-0">
+                    <h4 className="font-bold text-[19px] md:text-xl text-primary-green mb-2 ">
+                      Chatty
+                    </h4>
+                    <p className="text-primary-green opacity-90 text-white/60">
+                      {" "}
+                      Join live chats instantly! Connect, converse, and engage
+                      in real-time discussions on our dynamic platform.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </Card>
+
+            {/* CODECRAFT */}
+
+            <Card className="border-2 border-emerald-500">
+              <a
+                href="https://codecraft-tau-lemon.vercel.app/"
+                target="_blank"
+                className="projectcard flex-1 rounded-3xl py-2 px-8 flex items-center justify-center min-h-[12rem] "
+              >
+                <div className="flex justify-between items-center">
+                  <div className="h-full flex flex-col flex-1 justify-center py-3 md:pr-2 md:py-0">
+                    <h4 className="font-bold text-[19px] md:text-xl text-primary-green mb-2">
+                      CodeCraft
+                    </h4>
+                    <p className="text-primary-green opacity-90 text-white/60">
+                      {" "}
+                      CodeCraft is an online compiler that lets you write, run,
+                      and share code snippets with the community.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </Card>
+
+            {/* ZEPHYR */}
+
+            <Card className="border-2 border-yellow-500">
+              <a
+                href="https://metaversus-akshwalia.vercel.app"
+                target="_blank"
+                className="projectcard flex-1 rounded-3xl flex justify-between py-2 px-8 items-center min-h-[9.5rem] "
+              >
+                <div className="flex justify-between items-center py-3 md:pr-2 md:py-0">
+                  <div className="h-full flex flex-col flex-1 justify-center">
+                    <h4 className="font-bold text-[19px] md:text-xl text-primary-green mb-2">
+                      Zephyr
+                    </h4>
+                    <p className="text-primary-green opacity-90 text-white/60">
+                      {" "}
+                      A Fast AI Platform, Used to Generate , Edit , Export ,
+                      Deploy Code as per the user prompts.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </Card>
+
+            {/* BOLT */}
+
+            <Card className="border-2 border-red-500">
+              <a
+                href="https://bolt-frontend.onrender.com/"
+                target="_blank"
+                className="projectcard flex-1 rounded-3xl py-10 px-8 flex items-center justify-center min-h-[4rem] "
+              >
+                <div className="min-h-[250px] md:h-auto">
+                  <h4 className="font-bold text-[19px] md:text-xl text-primary-green mb-2 ">
+                    Bolt
                   </h4>
-                  <p className="text-primary-green opacity-90">
+                  <p className="text-primary-green opacity-90 mb-3 text-white/60">
                     {" "}
-                    Join live chats instantly! Connect, converse, and engage in
-                    real-time discussions on our dynamic platform.
+                    Seamlessly Travel from one to other destination with a click.
+                    Or earn ny registering yourself as Captain.We Got the Both Ways out.
+                    Effective Cost for the user and a good earning Model for the Captain.
                   </p>
                 </div>
-                <Image
-                  src="/chatIcon.png"
-                  width={100}
-                  height={0}
-                  alt="chatit"
-                  className="flex-grow-0 flex-shrink-0 h-[100px] rounded-full"
-                />
-              </div>
-            </a>
-            <a
-              href="https://quizzo-aksh.vercel.app/"
-              target="_blank"
-              className="projectcard bg-[#ffffff60] flex-1 rounded-3xl py-2 px-8 flex items-center justify-center min-h-[12rem] "
-            >
-              <div className="flex justify-between items-center">
-                <div className="h-full flex flex-col flex-1 justify-center py-3 md:pr-2 md:py-0">
-                  <h4 className="font-bold text-[19px] md:text-xl text-primary-green mb-2">
-                    CodeCraft
-                  </h4>
-                  <p className="text-primary-green opacity-90">
-                    {" "}
-                    A multiplayer quiz platform where you create rooms,
-                    challenge friends, and test your knowledge on any topic.
-                    Powered by Gemini for endless trivia fun!
-                  </p>
-                </div>
-                <Image
-                  src="/quizzo.png"
-                  width={100}
-                  height={0}
-                  alt="quizzo"
-                  className="flex-grow-0 flex-shrink-0 h-[100px] rounded-full"
-                />
-              </div>
-            </a>
-            <a
-              href="https://metaversus-akshwalia.vercel.app"
-              target="_blank"
-              className="projectcard bg-[#ffffff60] flex-1 rounded-3xl flex justify-between py-2 px-8 items-center min-h-[9.5rem] "
-            >
-              <div className="flex justify-between items-center py-3 md:pr-2 md:py-0">
-                <div className="h-full flex flex-col flex-1 justify-center">
-                  <h4 className="font-bold text-[19px] md:text-xl text-primary-green mb-2">
-                    Zephyr
-                  </h4>
-                  <p className="text-primary-green opacity-90">
-                    {" "}
-                    An immersive frontend project that transports you beyond
-                    reality using Next.js, Tailwind CSS, and Framer Motion.
-                  </p>
-                </div>
-                <Image
-                  src="/planet.png"
-                  width={150}
-                  height={150}
-                  alt="greatball"
-                  className="flex-grow-0 flex-shrink-0 -mr-7"
-                />
-              </div>
-            </a>
-            <a
-              href="https://akshwalia.github.io/calculator/"
-              target="_blank"
-              className="projectcard bg-[#ffffff60] flex-2 rounded-3xl p-8 relative overflow-hidden min-h-[9.5rem] "
-            >
-              <div className="min-h-[250px] md:h-auto">
-                <h4 className="font-bold text-[19px] md:text-xl text-primary-green mb-2">
-                  Calculator
-                </h4>
-                <p className="text-primary-green opacity-90 mb-3">
-                  {" "}
-                  Effortless calculations await! Crunch numbers swiftly on our
-                  user-friendly online calculator.
-                </p>
-                <Image
-                  src="/calculator.png"
-                  width={200}
-                  height={250}
-                  alt="calculator"
-                  className="flex-grow-0 flex-shrink-0 absolute left-0 right-0 ml-auto mr-auto"
-                />
-              </div>
-            </a>
+              </a>
+            </Card>
+
             <a
               href="https://akshwalia.github.io/weather/"
               target="_blank"

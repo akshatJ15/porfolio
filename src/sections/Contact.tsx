@@ -1,6 +1,7 @@
 "use client";
 import ArrowUpRightIcon from "../assets/icons/arrow-up-right.svg";
 import grainImage from "../assets/images/grain.jpg";
+import { motion } from "framer-motion";
 
 export const ContactSection = () => {
   const handleClick = () => {
@@ -25,20 +26,37 @@ export const ContactSection = () => {
           ></div>
           <div className="flex flex-col gap-8 items-center md:flex-row md:text-left md:gap-16">
             <div>
-              <h2 className="font-serif text-2xl md:text-3xl">
+              <motion.h2
+                className="font-serif text-2xl md:text-3xl"
+                initial={{ y: -30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.3, ease: "easeIn" }}
+              >
                 Let&apos;s Create Something Amazing Together
-              </h2>
-              <p className="text-sm mt-2 md:text-base">
+              </motion.h2>
+              <motion.p
+                className="text-sm mt-2 md:text-base"
+                initial={{ y: -30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.3, ease: "easeIn" }}
+              >
                 Ready to bring your next project to life? Contact me to discuss
                 how we can work together to bring your vision to life.
-              </p>
+              </motion.p>
             </div>
             <div>
               <button
                 className="text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-950"
                 onClick={handleClick}
               >
-                <span className="font-semibold">Contact Me</span>
+                <motion.span
+                  className="font-semibold"
+                  initial={{ y: -30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.3, ease: "easeIn" }}
+                >
+                  Contact Me
+                </motion.span>
                 <ArrowUpRightIcon className="size-4" />
               </button>
             </div>
