@@ -19,7 +19,7 @@ const Card = ({
           backgroundImage: `url(${grainImage.src})`,
         }}
       ></div>
-        {children}
+      {children}
     </div>
   );
 };

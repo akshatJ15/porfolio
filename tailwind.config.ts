@@ -104,6 +104,30 @@ const config: Config = {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),addVariablesForColors],
+  
 };
+function flattenColorPalette(obj: any, parentKey: string = '', res: any = {}) {
+  for (const key in obj) {
+	const value = obj[key];
+	const newKey = parentKey ? parentKey + '-' + key : key;
+	if (typeof value === 'object') {
+	  flattenColorPalette(value, newKey, res);
+	} else {
+	  res[newKey] = value;
+	}
+  }
+  return res;
+}
+
+function addVariablesForColors({ addBase, theme }: any) {
+	let allColors = flattenColorPalette(theme("colors"));
+	let newVars = Object.fromEntries(
+	  Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+	);
+
+	addBase({
+	  ":root": newVars,
+	});
+}
 export default config;
