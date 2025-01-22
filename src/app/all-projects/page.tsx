@@ -18,7 +18,7 @@ import Image, { StaticImageData } from "next/image";
 
 import chattyImg from '../../assets/project-images/chatty.png';
 
-export function BentoGridDemo() {
+export function page() {
   return (
     <BackgroundBeamsWithCollision className="relative overflow-x-clip radient-to-b bg-gradient-to-t from-gray-900/20 to-gray-800/20">
       <div className="relative  px-10 mt-40 overflow-x-clip font-serif">
@@ -117,4 +117,4 @@ const items = [
   },
 ];
 
-export default BentoGridDemo;
+export default page;
