@@ -15,12 +15,15 @@ import {
   SquareKanban,
 } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
-
-import chattyImg from '../../assets/project-images/chatty.png';
+import codeCraftImg from '../../assets/project-images/codecraft.png';
+import zephyrImg from '../../assets/project-images/zephyr.png';
+import boltImg from '../../assets/project-images/bolt.png';
+import chattyImg from '../../assets/all-projects/chatty.png';
+import dashboardImg from '../../assets/project-images/dashboard.png';
 
 export default function Page () {
   return (
-    <BackgroundBeamsWithCollision className="relative overflow-x-clip radient-to-b bg-gradient-to-t from-gray-900/20 to-gray-800/20">
+    <BackgroundBeamsWithCollision className="relative overflow-x-clip radient-to-b bg-gradient-to-t from-gray-900/20 to-gray-800/20 font-serif">
       <div className="relative  px-10 mt-40 overflow-x-clip font-serif">
         <BentoGrid className="lg:max-w-4xl mx-auto pb-60">
           {items.map((item, i) => (
@@ -43,8 +46,8 @@ export default function Page () {
   );
 }
 const Skeleton = ({ image }: { image: StaticImageData | string }) => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100">
-    <Image src={image} alt="" className="object-center w-full h-full" />
+  <div className="flex flex-1 min-h-[6rem] rounded-xl radial-gradient bg-gradient-to-b from-gray-900/20 to-gray-800/20">
+    <Image src={image} alt="" className="object-contain w-full h-full " />
   </div>
 );
 const items = [
@@ -57,7 +60,7 @@ const items = [
   {
     title: "Codecraft",
     description: "Dive into the transformative power of technology.",
-    header: <Skeleton image={chattyImg}/>,
+    header: <Skeleton image={codeCraftImg}/>,
     icon: <Blocks className="h-4 w-4 text-neutral-500" />,
   },
   {
@@ -70,7 +73,7 @@ const items = [
     title: "Zephyr",
     description:
       "Understand the impact of effective communication in our lives.",
-    header: <Skeleton image={chattyImg}/>,
+    header: <Skeleton image={zephyrImg}/>,
     icon: <Zap className="h-4 w-4 text-neutral-500" />,
   },
   {
@@ -88,7 +91,7 @@ const items = [
   {
     title: "Bolt",
     description: "Embark on exciting journeys and thrilling discoveries.",
-    header: <Skeleton image={chattyImg}/>,
+    header: <Skeleton image={boltImg}/>,
     icon: <Car className="h-4 w-4 text-neutral-500" />,
   },
   {
@@ -112,8 +115,7 @@ const items = [
   {
     title: "Admin Dashboard",
     description: "Embark on exciting journeys and thrilling discoveries.",
-    header: <Skeleton image={chattyImg}/>,
+    header: <Skeleton image={dashboardImg}/>,
     icon: <SquareKanban className="h-4 w-4 text-neutral-500" />,
   },
 ];
-
