@@ -35,6 +35,7 @@ import travelImg from "../../assets/project-images/travel.png";
 import tictactoeImg from "../../assets/project-images/tictactoe.png";
 import weatherImg from "../../assets/project-images/weather2.png";
 import chairImg from "../../assets/project-images/chair.png"
+import {Footer} from "../../sections/Footer";
 
 export default function Page() {
   return (
@@ -87,13 +88,14 @@ export default function Page() {
               />
             ))}
           </BentoGrid>
-          <div
+          {/* <div
             className="absolute h-[500px] w-full bottom-0 left-1/2 -translate-x-1/2 bg-emerald-300/30
       [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)]"
-          ></div>
+          ></div> */}
         </div>
       </BackgroundBeamsWithCollision>
       <BackgroundBeams />
+      <Footer />
     </div>
   );
 }
