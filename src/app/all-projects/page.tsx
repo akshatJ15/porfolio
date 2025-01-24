@@ -35,6 +35,7 @@ import travelImg from "../../assets/project-images/travel.png";
 import tictactoeImg from "../../assets/project-images/tictactoe.png";
 import weatherImg from "../../assets/project-images/weather2.png";
 import chairImg from "../../assets/project-images/chair.png"
+import brainwaveImg from "../../assets/project-images/brainwave.png";
 import {Footer} from "../../sections/Footer";
 
 export default function Page() {
@@ -174,6 +175,13 @@ const items = [
     header: <Skeleton image={dashboardImg} icon={MessageCircle} />,
     icon: <SquareKanban className="h-4 w-4 text-neutral-500" />,
     link: "https://react-admin-dashboard-theta-ten.vercel.app/",
+  },
+  {
+    title: "BrainWave",
+    description: "React.js , TailwindCSS",
+    header: <Skeleton image={brainwaveImg} icon={MessageCircle} />,
+    icon: <SquareKanban className="h-4 w-4 text-neutral-500" />,
+    link: "https://brainwave-seven-xi.vercel.app/",
   },
   {
     title: "Travel Brochure",
