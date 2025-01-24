@@ -74,7 +74,7 @@ export default function Page() {
         </section>
 
         <div className="relative  px-10 mt-40 overflow-x-clip font-serif">
-          <BentoGrid className="lg:max-w-4xl mx-auto pb-60">
+          <BentoGrid className="lg:max-w-4xl mx-auto pb-60 z-10">
             {items.map((item, i) => (
               <BentoGridItem
                 key={i}
