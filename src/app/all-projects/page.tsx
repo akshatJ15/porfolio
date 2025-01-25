@@ -36,6 +36,7 @@ import tictactoeImg from "../../assets/project-images/tictactoe.png";
 import weatherImg from "../../assets/project-images/weather2.png";
 import chairImg from "../../assets/project-images/chair.png"
 import brainwaveImg from "../../assets/project-images/brainwave.png";
+import calculatorImg from "../../assets/project-images/calculator.png";
 import {Footer} from "../../sections/Footer";
 
 export default function Page() {
@@ -203,6 +204,13 @@ const items = [
     header: <Skeleton image={weatherImg} icon={MessageCircle} />,
     icon: <CloudSun className="h-4 w-4 text-neutral-500" />,
     link: "https://akshatj15.github.io/Weather-App/",
+  },
+  {
+    title: "Calculator",
+    description: "HTML , CSS , JavaScript",
+    header: <Skeleton image={calculatorImg} icon={MessageCircle} />,
+    icon: <CloudSun className="h-4 w-4 text-neutral-500" />,
+    link: "https://akshatj15.github.io/Calculator/",
   },
   {
     title: "Modern Chair",
