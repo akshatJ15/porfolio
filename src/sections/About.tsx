@@ -18,6 +18,7 @@ import CardHeader from "@/components/CardHeader/CardHeader";
 import ToolBoxItems from "@/components/ToolBoxItems/ToolBoxItems";
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import { SiFirebase } from "react-icons/si";
 import mapImage from "../assets/images/map.png";
 
 const toolBoxItems = [
@@ -64,6 +65,10 @@ const toolBoxItems = [
   {
     title: "MongoDB",
     iconType: SiMongodb,
+  },
+  {
+    title: "Firebase",
+    iconType: SiFirebase,
   },
 ];
 
